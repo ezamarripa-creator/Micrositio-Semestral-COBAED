@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <script>
+    (function() {
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+      
+       document.addEventListener('keydown', function(e) {
+            const key = e.key.toLowerCase();
+            if ((e.ctrlKey && (key === 'u' || key === 's' || key === 'c' || key === 'i' || key === 'j')) ||
+                (e.ctrlKey && e.shiftKey && (key === 'i' || key === 'j' || key === 'c')) ||
+                e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        let devtoolsTriggered = false;
+        setInterval(function() {
+            if (devtoolsTriggered) return;
+            const before = new Date();
+            debugger; 
+            const after = new Date();
+            if (after - before > 100) { 
+                devtoolsTriggered = true;
+                document.body.innerHTML = '<div style="text-align:center; padding:50px; font-family:sans-serif;"><h1 style="color:#042C53;">⚠️ Acceso no autorizado</h1><p>El uso de herramientas de desarrollo no está permitido en este recurso institucional.</p><p style="font-size:14px; margin-top:30px;">🔒 COBAED · Dirección Académica</p></div>';
+            }
+        }, 2000);
+        
+        const style = document.createElement('style');
+        style.textContent = `body { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }`;
+        document.head.appendChild(style);
+    })();
+    </script>
+
+
+    <script>
+    (function() {
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+      
+       document.addEventListener('keydown', function(e) {
+            const key = e.key.toLowerCase();
+            if ((e.ctrlKey && (key === 'u' || key === 's' || key === 'c' || key === 'i' || key === 'j')) ||
+                (e.ctrlKey && e.shiftKey && (key === 'i' || key === 'j' || key === 'c')) ||
+                e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        let devtoolsTriggered = false;
+        setInterval(function() {
+            if (devtoolsTriggered) return;
+            const before = new Date();
+            debugger; 
+            const after = new Date();
+            if (after - before > 100) { 
+                devtoolsTriggered = true;
+                document.body.innerHTML = '<div style="text-align:center; padding:50px; font-family:sans-serif;"><h1 style="color:#042C53;">⚠️ Acceso no autorizado</h1><p>El uso de herramientas de desarrollo no está permitido en este recurso institucional.</p><p style="font-size:14px; margin-top:30px;">🔒 COBAED · Dirección Académica</p></div>';
+            }
+        }, 2000);
+        
+        const style = document.createElement('style');
+        style.textContent = `body { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }`;
+        document.head.appendChild(style);
+    })();
+    </script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COBAED · EDIEMS 2026–2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1f44;
+    --navy-mid: #0d2d5e;
+    --blue: #1a56a0;
+    --blue-light: #2c73d2;
+    --accent: #f59e0b;
+    --accent-pale: #fef3c7;
+    --teal: #0891b2;
+    --green: #059669;
+    --red: #dc2626;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-400: #94a3b8;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-900: #0f172a;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+    --shadow: 0 4px 16px rgba(10,31,68,.08), 0 2px 6px rgba(10,31,68,.06);
+    --shadow-lg: 0 12px 40px rgba(10,31,68,.13), 0 4px 12px rgba(10,31,68,.08);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--gray-50);
+    color: var(--gray-700);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .topbar {
+    background: var(--navy);
+    color: rgba(255,255,255,.7);
+    font-size: .75rem;
+    font-family: 'Sora', sans-serif;
+    padding: .4rem 0;
+    text-align: center;
+    letter-spacing: .04em;
+  }
+  .topbar span { color: var(--accent); font-weight: 600; }
+
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0f3460 100%);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,.3);
+  }
+  .header-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: .75rem 1.5rem;
+  }
+  .brand {
+    display: flex; align-items: center; gap: .75rem;
+    text-decoration: none; flex-shrink: 0;
+  }
+  .brand-logo {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent) 0%, #f97316 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; box-shadow: 0 2px 8px rgba(245,158,11,.4);
+  }
+  .brand-text { line-height: 1.2; }
+  .brand-name {
+    font-family: 'Sora', sans-serif; font-weight: 700;
+    color: var(--white); font-size: 1.05rem; letter-spacing: .02em;
+  }
+  .brand-sub {
+    font-size: .7rem; color: rgba(255,255,255,.55);
+    font-weight: 300; letter-spacing: .05em;
+  }
+
+  nav { display: flex; gap: .25rem; margin-left: auto; flex-wrap: wrap; }
+  .nav-link {
+    color: rgba(255,255,255,.75); font-size: .82rem;
+    font-family: 'Sora', sans-serif; font-weight: 500;
+    padding: .45rem .85rem; border-radius: 6px;
+    text-decoration: none; transition: all .2s;
+    cursor: pointer; border: none; background: none;
+    letter-spacing: .02em;
+  }
+  .nav-link:hover, .nav-link.active {
+    background: rgba(255,255,255,.12); color: var(--white);
+  }
+  .nav-link.active { background: rgba(245,158,11,.25); color: var(--accent); }
+
+  .hamburger { display: none; cursor: pointer; background: none; border: none; padding: .4rem; }
+  .hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--white); margin: 4px 0; border-radius: 2px;
+    transition: all .3s;
+  }
+
+  .section { display: none; animation: fadeIn .35s ease; }
+  .section.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #1a3a6b 100%);
+    padding: 4rem 1.5rem 3rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -60px; right: -60px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,158,11,.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -80px; left: 10%;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(44,115,210,.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(245,158,11,.2); border: 1px solid rgba(245,158,11,.4);
+    color: var(--accent); font-size: .75rem; font-weight: 600;
+    padding: .3rem .8rem; border-radius: 999px;
+    font-family: 'Sora', sans-serif; letter-spacing: .06em;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-family: 'Sora', sans-serif; font-weight: 700;
+    color: var(--white); font-size: clamp(1.6rem, 3vw, 2.6rem);
+    line-height: 1.25; margin-bottom: .75rem;
+  }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-desc {
+    color: rgba(255,255,255,.7); font-size: .95rem;
+    max-width: 680px; line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .hero-stats {
+    display: flex; gap: 2rem; flex-wrap: wrap;
+  }
+  .stat-box {
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+    border-radius: var(--radius-sm); padding: .9rem 1.25rem;
+    backdrop-filter: blur(8px);
+  }
+  .stat-box .num {
+    font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 700;
+    color: var(--accent); line-height: 1;
+  }
+  .stat-box .lbl { font-size: .72rem; color: rgba(255,255,255,.55); margin-top: .2rem; letter-spacing: .04em; }
+
+  .page { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  .section-title {
+    font-family: 'Sora', sans-serif; font-size: 1.45rem; font-weight: 700;
+    color: var(--navy); margin-bottom: .4rem;
+  }
+  .section-title-line {
+    width: 48px; height: 3px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--blue-light));
+    margin-bottom: 1.75rem;
+  }
+
+  .card {
+    background: var(--white); border-radius: var(--radius);
+    border: 1px solid var(--gray-200); box-shadow: var(--shadow-sm);
+    overflow: hidden; transition: box-shadow .25s, transform .25s;
+  }
+  .card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .card-header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    padding: 1.1rem 1.4rem;
+    display: flex; align-items: center; gap: .75rem;
+  }
+  .card-header .icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(255,255,255,.15);
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+  }
+  .card-header h3 {
+    font-family: 'Sora', sans-serif; font-weight: 600;
+    color: var(--white); font-size: .95rem;
+  }
+  .card-body { padding: 1.4rem; }
+  .card-body p { font-size: .9rem; color: var(--gray-600); line-height: 1.7; }
+
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px,1fr)); gap: 1.25rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.25rem; }
+
+  .tab-row {
+    display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+  }
+  .tab-btn {
+    font-family: 'Sora', sans-serif; font-size: .8rem; font-weight: 600;
+    padding: .5rem 1rem; border-radius: 6px;
+    border: 1px solid var(--gray-200); background: var(--white);
+    color: var(--gray-600); cursor: pointer; transition: all .2s;
+    letter-spacing: .02em;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    background: var(--navy); color: var(--white); border-color: var(--navy);
+  }
+  .tab-content { display: none; animation: fadeIn .3s ease; }
+  .tab-content.active { display: block; }
+
+  .notice {
+    background: #eff6ff; border: 1px solid #bfdbfe;
+    border-radius: var(--radius-sm); padding: .85rem 1.1rem;
+    margin-bottom: 1.5rem;
+    display: flex; gap: .65rem; align-items: flex-start;
+    font-size: .83rem; color: var(--blue);
+  }
+  .steps {
+    list-style: none;
+  }
+  .steps li {
+    display: flex; gap: 1rem; margin-bottom: 1.1rem;
+    font-size: .88rem; color: var(--gray-600); line-height: 1.65;
+  }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    color: var(--white); font-family: 'Sora', sans-serif; font-weight: 700; font-size: .78rem;
+    display: flex; align-items: center; justify-content: center; margin-top: .05rem;
+  }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: .35rem;
+    font-size: .72rem; font-weight: 600; padding: .25rem .65rem;
+    border-radius: 999px; font-family: 'Sora', sans-serif; letter-spacing: .04em;
+  }
+  .pill-blue { background: #dbeafe; color: var(--blue); }
+  .pill-green { background: #d1fae5; color: var(--green); }
+  .pill-amber { background: var(--accent-pale); color: #b45309; }
+
+  .subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .semester-block {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .semester-block-head {
+    padding: .75rem 1.1rem;
+    font-weight: 600;
+    font-size: .85rem;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .semester-block-head.s2 { background: linear-gradient(90deg, #1a5c3a, #267a4e); }
+  .semester-block-head.s4 { background: linear-gradient(90deg, var(--blue), var(--blue-light)); }
+  .semester-block-head.s6 { background: linear-gradient(90deg, #5c2a1a, #8a4a28); }
+  .semester-block ul { list-style: none; padding: .6rem 0; }
+  .semester-block li {
+    padding: .45rem 1.1rem;
+    font-size: .82rem;
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-100);
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+  .semester-block li::before {
+    content: '▸';
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .dl-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.2rem;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow .2s, transform .15s;
+  }
+  .dl-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+  .dl-icon {
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+  }
+  .dl-icon.pdf { background: #fee2e2; }
+  .dl-icon.xls { background: #e8f5ee; }
+  .dl-icon.guide { background: #e8f0fa; }
+  .dl-title {
+    font-size: .88rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin: .5rem 0 .2rem;
+  }
+  .dl-desc { font-size: .78rem; color: var(--gray-400); margin-bottom: .6rem; }
+  .dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .45rem .9rem;
+    background: var(--blue);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: .78rem;
+    font-weight: 500;
+    transition: background .18s;
+  }
+  .dl-btn:hover { background: var(--navy); }
+
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    font-size: .85rem;
+  }
+  .calendar-table thead {
+    background: linear-gradient(90deg, var(--navy), var(--blue));
+    color: white;
+  }
+  .calendar-table th {
+    padding: .85rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: .78rem;
+  }
+  .calendar-table td {
+    padding: .75rem 1rem;
+    border-bottom: 1px solid var(--gray-100);
+    color: var(--gray-700);
+  }
+  .badge {
+    display: inline-block;
+    padding: .22rem .65rem;
+    border-radius: 50px;
+    font-size: .72rem;
+    font-weight: 600;
+  }
+  .badge.open { background: #e8f0fa; color: var(--blue); }
+
+  /* Quick access bar (estilo index-script) */
+  .quick-bar {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1rem 1.4rem;
+    margin-bottom: 1.8rem;
+    display: flex;
+    gap: .7rem;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: var(--shadow-sm);
+  }
+  .quick-bar-label {
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    margin-right: .3rem;
+    flex-shrink: 0;
+  }
+  .quick-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .38rem .8rem;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--navy);
+    font-size: .78rem;
+    font-weight: 500;
+    transition: background .15s, border-color .15s;
+    white-space: nowrap;
+  }
+  .quick-link:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: white;
+  }
+
+  #results-container .results-loading {
+    padding: 3rem; text-align: center;
+    font-size: .88rem; color: var(--gray-400);
+  }
+  .loader {
+    width: 32px; height: 32px; border: 3px solid var(--gray-200);
+    border-top-color: var(--blue); border-radius: 50%;
+    animation: spin 1s linear infinite; margin: 0 auto .75rem;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .contact-card {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    color: white;
+    border-radius: var(--radius);
+    padding: 1.8rem 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.4rem;
+  }
+  .contact-avatar {
+    width: 56px; height: 56px;
+    background: rgba(255,255,255,.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+  }
+  .contact-info h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.15rem;
+  }
+  .confidentiality {
+    background: var(--white);
+    border-left: 4px solid var(--gray-400);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.3rem;
+    font-size: .8rem;
+    color: var(--gray-600);
+  }
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,.55);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: .78rem;
+  }
+
+  @media (max-width: 720px) {
+    .header-inner { padding: .6rem 1rem; }
+    nav { display: none; flex-direction: column; position: absolute; top: 100%;
+      left: 0; right: 0; background: var(--navy-mid); padding: .5rem;
+      border-top: 1px solid rgba(255,255,255,.1); z-index: 200; }
+    nav.open { display: flex; }
+    .hamburger { display: block; }
+    .hero { padding: 2rem 1rem; }
+    .page { padding: 1.5rem 1rem 3rem; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">Colegio de Bachilleres del Estado de Durango &nbsp;|&nbsp; <span>EDIEMS 2026–2027</span> &nbsp;|&nbsp; Ciclo Escolar 2026 A</div>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#" onclick="showSection('inicio')">
+      <div class="brand-logo">CB</div>
+      <div class="brand-text">
+        <span class="brand-name">COBAED</span>
+        <span class="brand-sub">Evaluación Semestral 2026B</span>
+      </div>
+    </a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
+    <nav id="main-nav">
+      <button class="nav-link active" onclick="showSection('inicio')">🏠 Inicio</button>
+      <button class="nav-link" onclick="showSection('estrategia')">📋 Estrategia</button>
+      <button class="nav-link" onclick="showSection('materias')">📚 Materias</button>
+      <button class="nav-link" onclick="showSection('comunicados')">📢 Comunicados</button>
+      <button class="nav-link" onclick="showSection('calendario')">📅 Calendario</button>
+      <button class="nav-link" onclick="showSection('resultados')">📊 Resultados</button>
+      <button class="nav-link" onclick="showSection('contacto')">✉️ Contacto</button>
+    </nav>
+  </div>
+</header>
+
+<!-- INICIO (con presentación institucional completa de index-script-semestral) -->
+<section id="inicio" class="section active">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">📌 Ciclo Escolar 2026B · Activo</div>
+      <h1>Evaluación Semestral<br><em>Institucional 2026B</em></h1>
+      <p class="hero-desc">Portal de coordinación para directivos y docentes del Colegio de Bachilleres del Estado de Durango. Consulta lineamientos, recursos y seguimiento de la evaluación diagnóstica.</p>
+      <div class="hero-stats">
+        <div class="stat-box"><div class="num">3</div><div class="lbl">Semestres</div></div>
+        <div class="stat-box"><div class="num">Jun 13–16</div><div class="lbl">Fechas</div></div>
+        <div class="stat-box"><div class="num">8+</div><div class="lbl">Materias</div></div>
+        <div class="stat-box"><div class="num">6</div><div class="lbl">Recursos</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="page">
+    <div class="quick-bar">
+      <span class="quick-bar-label">⚡ Acceso rápido</span>
+      <a class="quick-link" href="https://ces.cobaed.mx/" target="_blank">🔗 Registro CES</a>
+      <a class="quick-link" href="https://drive.google.com/file/d/1LeL-qr7VBFmZmq6Cd89eA5lkwIkSqq42/view?usp=drive_link" target="_blank">📖 Guía Aplicador</a>
+      <a class="quick-link" href="https://docs.google.com/spreadsheets/d/1IeQu5uZw-ekT1UajTKao7RmnmLlVL1RN/edit?usp=drive_link" target="_blank">📋 Control Aplicación</a>
+      <a class="quick-link" href="#" onclick="showSection('resultados'); return false;">📊 Ver Resultados</a>
+    </div>
+    <div class="section-header" style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;"><div class="section-icon" style="width:46px;height:46px;background:linear-gradient(135deg, var(--blue), var(--blue-light));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;">🏛️</div><div><h2 style="font-family:'Sora',sans-serif; font-size:1.55rem; color:var(--navy);">Presentación Institucional</h2><p style="font-size:.85rem; color:var(--gray-600);">Mensaje del Departamento de Planeación · COBAED</p></div></div>
+    <div class="notice info"><span>ℹ️</span>La aplicación del <strong>Examen Semestral 2026B</strong> se llevará a cabo del <strong>13 al 16 de junio de 2026</strong>. La plataforma en línea estará disponible a partir del <strong>13 de junio</strong> en la plataforma oficial del COBAED.</div>
+    <div class="grid-2">
+      <div class="card"><div class="card-header"><div class="icon">📌</div><h3>Contexto Estratégico</h3></div><div class="card-body"><p>En el marco del <strong>Eje 1: Mejora de los aprendizajes fundamentales y prioritarios</strong> del Proyecto Educativo Estatal, se implementará la evaluación del Examen Semestral 2026B. El propósito es identificar el nivel de dominio de los conocimientos adquiridos por los estudiantes en las distintas Unidades de Aprendizaje Curricular durante el semestre que concluye.</p></div></div>
+      <div class="card"><div class="card-header"><div class="icon">🎯</div><h3>Objetivo de la Evaluación</h3></div><div class="card-body"><p>Obtener información clave sobre el <strong>logro académico de los estudiantes</strong>, que servirá como base para la toma de decisiones y la planeación de acciones orientadas a fortalecer la calidad educativa en el próximo semestre.</p></div></div>
+      <div class="card"><div class="card-header"><div class="icon">📣</div><h3>Recomendación para Planteles</h3></div><div class="card-body"><p>Se recomienda <strong>alentar al estudiantado a responder con honestidad</strong> para obtener resultados que reflejen el nivel académico real. Cada plantel deberá adecuar la estrategia según sus circunstancias y recursos disponibles.</p></div></div>
+    </div>
+    <div class="card"><div class="card-header"><div class="icon">📋</div><h3>Propósito Diagnóstico de la Evaluación</h3></div><div class="card-body"><p>Diagnosticar los aprendizajes adquiridos en <strong>Lengua y Comunicación, Pensamiento Matemático, Ciencias Naturales y Experimentales, Ciencias Sociales, Conciencia Histórica, Pensamiento Filosófico y Humanidades, Cultura Digital e Inglés</strong> del estudiantado matriculado en COBAED. Los resultados servirán al personal docente, autoridades educativas, padres de familia y la comunidad estudiantil como elemento válido para planear programas y estrategias de mejora continua.</p></div></div>
+    <div class="notice success"><span>✅</span>La función diagnóstica de la evaluación <strong>no tiene carácter punitivo</strong>. No se enjuicia ni etiqueta al estudiantado, y no puede utilizarse como elemento de discriminación o falta a sus derechos humanos.</div>
+  </div>
+</section>
+
+<!-- ESTRATEGIA (con objetivo estratégico en concientización) -->
+<section id="estrategia" class="section">
+  <div class="page">
+    <div class="section-title">📋 Estrategia EDIEMS 2026–2027</div>
+    <div class="section-title-line"></div>
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="showTab(this,'tab-concientizacion')">Concientización</button>
+      <button class="tab-btn" onclick="showTab(this,'tab-proposito')">Propósito</button>
+      <button class="tab-btn" onclick="showTab(this,'tab-aplicacion')">Protocolo 5 etapas</button>
+      <button class="tab-btn" onclick="showTab(this,'tab-versiones')">Concientización y Versión en línea</button>
+    </div>
+    <div id="tab-concientizacion" class="tab-content active">
+      <!-- Objetivo estratégico agregado -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div class="card-header"><div class="icon">🏗️</div><h3>Objetivo Estratégico</h3></div>
+        <div class="card-body"><p>En el marco del <strong>Modelo Educativo 2025</strong>, la aplicación del Examen Semestral Institucional se concibe como una herramienta fundamental para la transformación educativa. El objetivo es asegurar una implementación efectiva mediante la capacitación del personal directivo, generando datos válidos y confiables para diseñar estrategias de mejora.</p></div>
+      </div>
+      <div class="notice"><span>ℹ️</span>Es fundamental que todo el personal directivo, docente, administrativo y de servicios asista a las pláticas de concientización sobre el propósito de la estrategia.</div>
+      <div class="grid-2">
+        <div class="card"><div class="card-header"><div class="icon">📣</div><h3>Temas de Concientización en Planteles</h3></div><div class="card-body"><ul class="steps"><li><div class="step-num">1</div><span>En qué consiste la Estrategia para recibir al estudiantado de Nuevo Ingreso 2026–2027 y cómo se implementará en el plantel.</span></li><li><div class="step-num">2</div><span>Los propósitos de la Evaluación Diagnóstica EDIEMS 2026–2027 como parte de la Estrategia.</span></li><li><div class="step-num">3</div><span>Importancia de la participación antes, durante y después de todas las personas involucradas.</span></li><li><div class="step-num">4</div><span>Aplicación de la evaluación diagnóstica <strong>Test</strong>.</span></li><li><div class="step-num">5</div><span>Análisis de los resultados obtenidos con el Test.</span></li><li><div class="step-num">6</div><span>Impartir el Curso Propedéutico para el ciclo 2026–2027.</span></li><li><div class="step-num">7</div><span>Proceso de la evaluación al ingreso a la EMS — <strong>Postest</strong>.</span></li><li><div class="step-num">8</div><span>Análisis y difusión de los resultados.</span></li><li><div class="step-num">9</div><span>Elaboración de la Estrategia de Mejora Educativa del plantel.</span></li></ul></div></div>
+        <div class="card"><div class="card-header"><div class="icon">🎯</div><h3>Momentos de la Estrategia</h3></div><div class="card-body"><div style="display:flex;flex-direction:column;gap:1rem;"><div style="background:#eff6ff;border-radius:8px;padding:1rem;"><div style="font-weight:700;font-size:.82rem;color:var(--blue);">⏪ ANTES</div><p>Planeación, sensibilización del personal, selección de versión de aplicación, registro de estudiantes, programación de fechas y horarios.</p></div><div style="background:#f0fdf4;border-radius:8px;padding:1rem;"><div style="font-weight:700;font-size:.82rem;color:var(--green);">▶️ DURANTE</div><p>Aplicación del Test y los instrumentos complementarios (Escala de Autoestima Rosenberg, Cuestionario sobre Contexto Social y Académico).</p></div><div style="background:#fff7ed;border-radius:8px;padding:1rem;"><div style="font-weight:700;font-size:.82rem;color:#c2410c;">⏩ DESPUÉS</div><p>Análisis de resultados, elaboración de diagnóstico, diseño e implementación de Estrategia de Mejora Educativa, aplicación del Postest.</p></div></div></div></div>
+      </div>
+    </div>
+    <div id="tab-proposito" class="tab-content"><div class="notice"><span>📌</span>La función diagnóstica de la evaluación <strong>no</strong> es enjuiciar o etiquetar al estudiantado, ni servir como elemento de discriminación o falta a sus derechos humanos.</div><div class="grid-3"><div class="card"><div class="card-header" style="background:linear-gradient(135deg,#164e63,#0891b2);"><div class="icon">⚗️</div><h3>Ciencias Naturales</h3></div><div class="card-body"><p>Comprende fenómenos y procesos naturales en materia y energía, desde la perspectiva de la química y la física.</p></div></div><div class="card"><div class="card-header" style="background:linear-gradient(135deg,#4c1d95,#7c3aed);"><div class="icon">🧠</div><h3>Pensamiento Crítico</h3></div><div class="card-body"><p>Reconoce, expresa y utiliza razonamiento complejo, reflexión ética e interpretación crítica de fenómenos humanos y sociales.</p></div></div><div class="card"><div class="card-header" style="background:linear-gradient(135deg,#78350f,#d97706);"><div class="icon">📐</div><h3>Matemáticas</h3></div><div class="card-body"><p>Aplica elementos esenciales de aritmética y lenguaje algebraico como representación de situaciones cotidianas y escolares.</p></div></div><div class="card"><div class="card-header" style="background:linear-gradient(135deg,#14532d,#16a34a);"><div class="icon">🌍</div><h3>Ciencias Sociales</h3></div><div class="card-body"><p>Comprende el funcionamiento social a partir de elementos históricos, políticos y económicos, promoviendo una cultura por la paz.</p></div></div><div class="card"><div class="card-header" style="background:linear-gradient(135deg,#7f1d1d,#dc2626);"><div class="icon">📖</div><h3>Lenguaje</h3></div><div class="card-body"><p>Selecciona, organiza, interpreta y comparte información a través de la interacción con la lectura y la escritura.</p></div></div></div></div>
+    <div id="tab-aplicacion" class="tab-content"><div class="card"><div class="card-header"><div class="icon">🗺️</div><h3>Protocolo de 5 Etapas — Día de Aplicación</h3></div><div class="card-body"><ul class="steps"><li><div class="step-num">1</div><span><strong>Recomendaciones Técnicas</strong> Verificar acceso a correo institucional, conectividad y funcionamiento de formularios previo a la aplicación.</span></li><li><div class="step-num">2</div><span><strong>Preparación en el Aula</strong> Definir acomodo físico que permita supervisión visual completa. Sensibilizar a estudiantes sobre la importancia.</span></li><li><div class="step-num">3</div><span><strong>Inicio de la Aplicación</strong> Horario fijo y supervisado. Implementar temporizador integrado con límite de 60–90 minutos.</span></li><li><div class="step-num">4</div><span><strong>Desarrollo del Examen</strong> Supervisión activa. Aplicadores con protocolos de verificación de dispositivos y técnicas efectivas.</span></li><li><div class="step-num">5</div><span><strong>Cierre de la Aplicación</strong> Registrar incidencias en el Acta de Irregularidades. Verificar envío y recepción de respuestas.</span></li></ul></div></div></div>
+    <div id="tab-versiones" class="tab-content"><div class="grid-2"><div class="card"><div class="card-header"><div class="icon">🧑‍🏫</div><h3>Concientización en Planteles</h3></div><div class="card-body"><p>El personal directivo, docente, administrativo y de servicios debe asistir a pláticas de sensibilización que cubran:</p><ul style="margin-top:.5rem;padding-left:1.2rem;font-size:.88rem;"><li>En qué consiste la estrategia y cómo se implementará</li><li>Propósitos de la identificación de avances académicos</li><li>Importancia de la participación antes, durante y después</li><li>Análisis y difusión de resultados</li><li>Elaboración de Estrategia de Mejora Educativa</li></ul></div></div><div class="card"><div class="card-header"><div class="icon">🔗</div><h3>Versión en Línea · Pasos</h3></div><div class="card-body"><ul style="padding-left:1.2rem;font-size:.88rem;"><li>Programar fecha(s) y hora(s) de aplicación por plantel</li><li>Registrar estudiantes en <a href="https://ces.cobaed.mx/" target="_blank" style="color:var(--blue)">ces.cobaed.mx</a></li><li>Anotar fechas en hoja de control (formato Excel)</li><li>Fechas validadas por COSAC según disponibilidad</li></ul><div class="notice warn" style="margin-top:.8rem;font-size:.82rem;"><span>⚠️</span>La programación en línea estará disponible a partir del <strong>13 de junio de 2026</strong>.</div></div></div></div></div>
+  </div>
+</section>
+
+<!-- MATERIAS, COMUNICADOS, RESULTADOS, CONTACTO (sin cambios) -->
+<section id="materias" class="section"><div class="page"><div class="section-title">📚 Asignaturas Evaluadas</div><div class="section-title-line"></div><div class="notice info"><span>📌</span>Las siguientes asignaturas corresponden a los semestres <strong>Segundo, Cuarto y Sexto</strong>.</div><div class="subjects-grid"><div class="semester-block"><div class="semester-block-head s2">🟢 Segundo Semestre</div><ul><li>Ciencias Naturales, Experimentales y Tecnología II</li><li>Ciencias Sociales II</li><li>Cultura Digital II</li><li>Inglés II</li><li>Lengua y Comunicación II</li><li>Pensamiento Filosófico y Humanidades II</li><li>Pensamiento Matemático II</li><li>Taller de Ciencias</li></ul></div><div class="semester-block"><div class="semester-block-head s4">🔵 Cuarto Semestre</div><ul><li>Ciencias Sociales III</li><li>Conciencia Histórica I · Perspectivas del México Antiguo</li><li>Espacio y Sociedad</li><li>Inglés IV</li><li>Pensamiento Literario</li><li>Reacciones Químicas: Conservación de la Materia</li><li>Taller de Cultura Digital</li><li>Temas Selectos de Matemáticas I</li></ul></div><div class="semester-block"><div class="semester-block-head s6">🔴 Sexto Semestre</div><ul><li>Análisis de Fenómenos Físicos II</li><li>Comunicación y Sociedad II</li><li>Conciencia Histórica III</li><li>Economía II · Política Económica y Pública Mexicana</li><li>Fundamentos de la Administración II</li><li>Inglés VI</li><li>Organismos: Estructuras y Procesos</li><li>Organización de Flujo de Materia y Energía II</li><li>Psicología II</li><li>Salud Integral II</li><li>Taller de Pensamiento Variacional II</li><li>Taller de Probabilidad y Estadística II</li><li>Temas Selectos de Biología</li><li>Temas Selectos de Ciencias Sociales II</li><li>Temas Selectos de Matemáticas II</li></ul></div></div></div></section>
+
+<section id="comunicados" class="section"><div class="page"><div class="section-title">📂 Comunicados y Recursos</div><div class="section-title-line"></div><div class="download-grid"><div class="dl-card"><div class="dl-icon pdf">📄</div><div class="dl-title">Lineamientos de Aplicación</div><div class="dl-desc">Documento oficial con lineamientos para la evaluación semestral institucional.</div><a class="dl-btn" href="https://drive.google.com/file/d/1CFwde8Yt5v63czMZ_Rc7xJDmajacPEYz/view?usp=drive_link" target="_blank">📥 Abrir documento</a></div><div class="dl-card"><div class="dl-icon xls">📋</div><div class="dl-title">Acta de Irregularidades</div><div class="dl-desc">Formato Excel para el registro de irregularidades durante la aplicación.</div><a class="dl-btn" href="https://docs.google.com/spreadsheets/d/12Z9_uHfXugUKS1teYHghqT2FcUsBoO75/edit?usp=drive_link" target="_blank">📥 Abrir formato</a></div><div class="dl-card"><div class="dl-icon xls">📊</div><div class="dl-title">Formato Control de Aplicación</div><div class="dl-desc">Hoja de control para registrar fechas y horarios de la evaluación por plantel.</div><a class="dl-btn" href="https://docs.google.com/spreadsheets/d/1IeQu5uZw-ekT1UajTKao7RmnmLlVL1RN/edit?usp=drive_link" target="_blank">📥 Abrir formato</a></div><div class="dl-card"><div class="dl-icon guide">📖</div><div class="dl-title">Guía del Coordinador</div><div class="dl-desc">Instrucciones completas para el coordinador de la evaluación diagnóstica en el plantel.</div><a class="dl-btn" href="https://drive.google.com/file/d/13iC7l_k5EBhKIMZxvSzl6SscXIYmtoBn/view?usp=drive_link" target="_blank">📥 Abrir guía</a></div><div class="dl-card"><div class="dl-icon guide">👨‍👩‍👧</div><div class="dl-title">Guía para Padres de Familia</div><div class="dl-desc">Información dirigida a padres y tutores sobre la evaluación y sus propósitos.</div><a class="dl-btn" href="https://drive.google.com/file/d/1X2gmgABFQpboO87vzYIAszDWK5ia9wcj/view?usp=drive_link" target="_blank">📥 Abrir guía</a></div><div class="dl-card"><div class="dl-icon guide">🧑‍🏫</div><div class="dl-title">Guía para Docente Aplicador</div><div class="dl-desc">Protocolo paso a paso para el docente a cargo de aplicar el instrumento.</div><a class="dl-btn" href="https://drive.google.com/file/d/1LeL-qr7VBFmZmq6Cd89eA5lkwIkSqq42/view?usp=drive_link" target="_blank">📥 Abrir guía</a></div></div><div class="notice info"><span>🔗</span>Para el registro de estudiantes, acceda a la plataforma oficial: <a href="https://ces.cobaed.mx/" target="_blank" style="color:var(--blue); font-weight:600;">ces.cobaed.mx</a></div></div></section>
+
+<!-- CALENDARIO completo (index-script-semestral) -->
+<section id="calendario" class="section">
+  <div class="page">
+    <div class="section-title">📅 Calendario de Evaluaciones</div>
+    <div class="section-title-line"></div>
+    <div class="card"><div class="card-header"><div class="icon">🗓️</div><h3>Período de Aplicación</h3></div><div class="card-body"><table class="calendar-table"><thead><tr><th>Semestre</th><th>Fecha Inicio</th><th>Fecha Final</th><th>Modalidad</th><th>Estado</th></tr></thead><tbody><tr><td><strong>Segundo Semestre</strong></td><td>13 junio 2026</td><td>16 junio 2026</td><td>En línea</td><td><span class="badge open">Próximo</span></td></tr><tr><td><strong>Cuarto Semestre</strong></td><td>13 junio 2026</td><td>16 junio 2026</td><td>En línea</td><td><span class="badge open">Próximo</span></td></tr><tr><td><strong>Sexto Semestre</strong></td><td>13 junio 2026</td><td>16 junio 2026</td><td>En línea</td><td><span class="badge open">Próximo</span></td></tr></tbody></table></div></div>
+    <div class="grid-2"><div class="card"><div class="card-header"><div class="icon">⏰</div><h3>Hitos Importantes</h3></div><div class="card-body"><table style="width:100%;font-size:.85rem;"><tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:.5rem .3rem;">13 junio 2026</td><td style="padding:.5rem .3rem;font-weight:500;">Apertura plataforma en línea</td></tr><tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:.5rem .3rem;">13–16 jun 2026</td><td style="padding:.5rem .3rem;font-weight:500;">Período de aplicación</td></tr><tr><td style="padding:.5rem .3rem;">25 junio 2026</td><td style="padding:.5rem .3rem;font-weight:500;">Disponibilidad de resultados</td></tr></table></div></div><div class="card"><div class="card-header"><div class="icon">📝</div><h3>Notas de Programación</h3></div><div class="card-body"><p>La(s) fecha(s) y horario(s) solicitados serán <strong>validados por la COSAC</strong> según la disponibilidad y capacidad de aplicación simultánea.</p><p style="margin-top:.5rem;">Registre las fechas en la <strong>hoja de control (formato Excel)</strong> una vez que las hayan definido en firme.</p></div></div></div>
+  </div>
+</section>
+
+<section id="resultados" class="section"><div class="page"><div class="section-title">📊 Resultados Institucionales</div><div class="section-title-line"></div><div class="results-card" id="results-container"><div class="results-loading"><div class="loader"></div><div>Conectando con el sistema institucional...</div></div></div></div></section>
+<section id="contacto" class="section"><div class="page"><div class="section-title">✉️ Contacto Institucional</div><div class="section-title-line"></div><div class="contact-card"><div class="contact-avatar">👩‍💼</div><div class="contact-info"><h3>Angélica Casas</h3><p>Departamento de Planeación · PAEC / Planeación<br><strong>Extensión:</strong> 73928 &nbsp;·&nbsp; <strong>Área:</strong> COSAC / Evaluación</p></div></div><div class="confidentiality"><strong>⚖️ Aviso de Confidencialidad Institucional</strong><br><br>De conformidad con lo establecido en el inciso a del artículo 57 del "Acuerdo por el que se emiten las políticas y disposiciones para impulsar el uso y aprovechamiento de la informática...", se informa que este sitio y los datos adjuntos son para uso exclusivo de la persona o entidad a la que expresamente ha sido enviada. La información aquí contenida puede ser considerada como <strong>CONFIDENCIAL o RESERVADA</strong> bajo los términos de la Ley General de Transparencia y Acceso a la Información Pública. Si por error ha accedido a este sitio: 1) Se prohíbe su difusión, copia o modificación; 2) Notifíquelo de inmediato al remitente; y 3) Elimine cualquier registro o copia digital de forma permanente.</div></div></section>
+
+<footer><strong>COBAED</strong> · Colegio de Bachilleres del Estado de Durango · Evaluación Semestral Institucional 2026B · Departamento de Planeación</footer>
+
+<script>
+function showSection(id) { document.querySelectorAll('.section').forEach(s => s.classList.remove('active')); document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active')); document.getElementById(id).classList.add('active'); const btns = document.querySelectorAll('.nav-link'); btns.forEach(b => { if (b.getAttribute('onclick')?.includes(id)) b.classList.add('active'); }); window.scrollTo({ top: 0, behavior: 'smooth' }); if (id === 'resultados') loadResults(); }
+function toggleMenu() { document.getElementById('main-nav').classList.toggle('open'); }
+function showTab(btn, tabId) { const parent = btn.closest('.section'); parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active')); parent.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active')); btn.classList.add('active'); document.getElementById(tabId).classList.add('active'); }
+const GAS_URL = 'https://script.google.com/a/macros/cobaed.mx/s/AKfycbzNsVtqj2rpmGNjFEASPcDnlOVM191dT2jrF-1bG4Y7dBbJZ8sMASLVplEa1bUVoTuw/exec';
+let resultsLoaded = false;
+function loadResults() { if (resultsLoaded) return; const container = document.getElementById('results-container'); container.innerHTML = '<div class="results-loading"><div class="loader"></div><div>Consultando datos del sistema institucional...</div></div>'; fetch(GAS_URL + '?action=getDiagnostico').then(r => r.json()).then(data => { resultsLoaded = true; renderResults(data); }).catch(() => { resultsLoaded = true; renderResults(getDemoData()); }); }
+function getDemoData() { return { semestre: '2026 B', actualizacion: new Date().toLocaleDateString('es-MX'), resumen: { planteles: 34, estudiantesEvaluados: 4800, porcentajeParticipacion: 98 }, areas: [ { nombre: 'Matemáticas', promedio: 5.8, nivel: 'bajo' }, { nombre: 'Lenguaje', promedio: 6.4, nivel: 'medio' }, { nombre: 'Ciencias Naturales', promedio: 6.1, nivel: 'medio' }, { nombre: 'Ciencias Sociales', promedio: 6.7, nivel: 'medio' }, { nombre: 'Pensamiento Crítico', promedio: 5.5, nivel: 'bajo' } ], planteles: [ { nombre: 'Plantel Durango', inscritos: 280, evaluados: 245, participacion: 87.5 }, { nombre: 'Plantel Gómez Palacio', inscritos: 320, evaluados: 290, participacion: 90.6 }, { nombre: 'Plantel Lerdo', inscritos: 180, evaluados: 142, participacion: 78.9 } ] }; }
+function renderResults(data) { const container = document.getElementById('results-container'); const nivelColor = { bajo: '#fee2e2', medio: '#fef3c7', alto: '#dcfce7' }; const nivelText = { bajo: '#dc2626', medio: '#b45309', alto: '#059669' }; const nivelLabel = { bajo: '⚠️ Área de oportunidad', medio: '➡️ En desarrollo', alto: '✅ Consolidado' }; let areasHTML = (data.areas || []).map(a => `<div style="display:flex;align-items:center;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--gray-100);"><div style="flex:1;font-size:.88rem;font-weight:500;color:var(--navy);">${a.nombre}</div><div style="width:120px;background:var(--gray-100);border-radius:999px;height:8px;overflow:hidden;"><div style="width:${(a.promedio/10)*100}%;height:100%;background:${a.promedio<6?'#ef4444':a.promedio<7?'#f59e0b':'#10b981'};border-radius:999px;"></div></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;color:var(--navy);min-width:32px;text-align:right;">${a.promedio}</div><span style="padding:.2rem .6rem;border-radius:4px;font-size:.7rem;font-weight:600;background:${nivelColor[a.nivel]};color:${nivelText[a.nivel]};">${nivelLabel[a.nivel]}</span></div>`).join(''); let plantelesHTML = (data.planteles || []).map(p => `<td>${p.nombre}</td><td>${p.inscritos}</td><td>${p.evaluados}</td><td><span style="padding:.2rem .65rem;border-radius:4px;background:${p.participacion>=85?'#dcfce7':p.participacion>=70?'#fef3c7':'#fee2e2'};color:${p.participacion>=85?'#059669':p.participacion>=70?'#b45309':'#dc2626'};">${p.participacion}%</span></td></tr>`).join(''); container.innerHTML = `<div style="padding:1.25rem;border-bottom:1px solid var(--gray-100);display:flex;justify-content:space-between;"><div><div style="font-weight:700;font-size:.95rem;">Diagnóstico Inicial — Semestre ${data.semestre}</div><div style="font-size:.75rem;">Actualizado: ${data.actualizacion}</div></div><button onclick="resultsLoaded=false;loadResults();" style="font-size:.78rem;background:var(--gray-100);border:none;border-radius:6px;padding:.4rem .85rem;">↻ Actualizar</button></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;padding:1.25rem;"><div style="text-align:center;padding:1rem;background:var(--gray-50);border-radius:10px;"><div style="font-size:1.8rem;font-weight:700;color:var(--navy);">${data.resumen?.planteles||'—'}</div><div style="font-size:.75rem;">Planteles participantes</div></div><div style="text-align:center;padding:1rem;background:var(--gray-50);border-radius:10px;"><div style="font-size:1.8rem;font-weight:700;color:var(--blue);">${(data.resumen?.estudiantesEvaluados||0).toLocaleString()}</div><div style="font-size:.75rem;">Estudiantes evaluados</div></div><div style="text-align:center;padding:1rem;background:var(--gray-50);border-radius:10px;"><div style="font-size:1.8rem;font-weight:700;color:var(--green);">${data.resumen?.porcentajeParticipacion||'—'}%</div><div style="font-size:.75rem;">Participación general</div></div></div><div style="padding:0 1.25rem;"><div style="font-weight:700;margin-bottom:.75rem;">Resultados por Área Evaluada</div>${areasHTML}</div><div style="padding:1.25rem;"><div style="font-weight:700;margin-bottom:.75rem;">Participación por Plantel</div><table style="width:100%;border-collapse:collapse;"><thead><tr><th>Plantel</th><th>Inscritos</th><th>Evaluados</th><th>Participación</th></tr></thead><tbody>${plantelesHTML}</tbody></table></div>`; }
+document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => document.getElementById('main-nav').classList.remove('open')));
+</script>
+</body>
+</html>
